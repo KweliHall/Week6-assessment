@@ -37,6 +37,7 @@ app.get('/api/robots', (req, res) => {
         res.status(200).send(botsArr)
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
+        rollbar.error("could njot get robots")
         res.sendStatus(400)
     }
 })
@@ -49,7 +50,7 @@ app.get('/api/robots/five', (req, res) => {
         res.status(200).send({choices, compDuo})
     } catch (error) {
         console.log('ERROR GETTING FIVE BOTS', error)
-        rollbar.error("Could not get bots")
+        rollbar.error("Could not get 5 bots")
         res.sendStatus(400)
     }
 })
