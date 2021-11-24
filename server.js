@@ -7,16 +7,17 @@ const {shuffleArray} = require('./utils')
 app.use(express.json())
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/index.html")); 
-})
+});
+
 
 app.get('/css', (req, res) =>{
     res.sendFile(path.join(__dirname, "/public/index.css"));
-})
+});
 
 app.get('/js', (req, res) =>{
     res.sendFile(path.join(__dirname, "/public/index.js"));
     console.log("server.js joined");
-})
+});
 
 
 app.get('/api/robots', (req, res) => {
